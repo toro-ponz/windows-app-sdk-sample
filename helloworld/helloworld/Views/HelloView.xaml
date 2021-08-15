@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="helloworld.Views.HelloView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="using:helloworld.ViewModels"
+    d:DataContext="{d:DesignInstance Type=viewmodels:HelloViewModel}"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel
+        Orientation="Vertical"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <TextBlock
+            Margin="10"
+            FontSize="25"
+            HorizontalAlignment="Center"
+            Text="{x:Bind HelloViewModel.Count, Mode=OneWay}" />
+        <Button
+            Padding="30,10"
+            FontSize="25"
+            FontWeight="Bold"
+            Command="{x:Bind HelloViewModel.HelloCommand, Mode=OneWay}"
+            Content="{x:Bind HelloViewModel.Message, Mode=OneWay}" />
+    </StackPanel>
+</Page>
